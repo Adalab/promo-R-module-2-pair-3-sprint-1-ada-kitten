@@ -62,7 +62,9 @@ const cat3 = `<li class="card">
 catList.innerHTML = cat1 + cat2 + cat3;
 
 const formButton = document.querySelector('.fa-plus-circle');
-const form = document.querySelector('.js-new-form new-form');
+
+const form = document.querySelector('.js-new-form');
+console.log(form);
 formButton.addEventListener('click', (event)=> {
   event.preventDefault();
   if (form.classList.contains('collapsed')) {
