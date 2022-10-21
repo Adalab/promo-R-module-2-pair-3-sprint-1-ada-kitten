@@ -61,6 +61,29 @@ const cat3 = `<li class="card">
 
 catList.innerHTML = cat1 + cat2 + cat3;
 
+
+const input_search_desc = document.querySelector('.js_in_search_desc');
+input_search_desc.value = 'cariñoso';
+const descrSearchText = input_search_desc.value;
+const cardDesc = document.querySelector('.card');
+
+if(cat1Desc.includes(descrSearchText)) {
+  cardDesc.classList.remove("collapsed");
+} else {
+  console.log(cat1Desc);
+  cardDesc.classList.add("collapsed");
+  console.log(cat1Desc);
+};
+
+  
+  if( kittenDesc2.includes(descrSearchText) ) {
+  //Completa el código
+  }
+  
+  if( kittenDesc3.includes(descrSearchText) ) {
+  //Completa el código
+  }
+
 const formButton = document.querySelector('.fa-plus-circle');
 
 const form = document.querySelector('.js-new-form');
