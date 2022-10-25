@@ -64,9 +64,6 @@ const cat3Race = 'British Shorthair';
 
 
 
-
-
-
 const formButton = document.querySelector('.fa-plus-circle');
 
 // console.log(form);
@@ -80,7 +77,7 @@ const formButton = document.querySelector('.fa-plus-circle');
 // });
 
 const form = document.querySelector('.new-form');
-console.log(form);
+// console.log(form);
 
 function showNewCatForm() {
 form.classList.remove('collapsed');
@@ -119,33 +116,89 @@ function renderKitten(url, desc, name, race) {
    return result;
 }
 
-const cat1 = renderKitten(`${cat1Image}, ${cat1Desc}, ${cat1Name}, ${cat1Race}`);
-const cat2 = renderKitten(`${cat2Image}, ${cat2Desc}, ${cat2Name}, ${cat2Race}`);
-const cat3 = renderKitten(`${cat3Image}, ${cat3Desc}, ${cat3Name}, ${cat3Race}`);
+const cat1 = renderKitten(`${cat1Image}`, `${cat1Desc}`, `${cat1Name}`, `${cat1Race}`);
+const cat2 = renderKitten(`${cat2Image}`, `${cat2Desc}`, `${cat2Name}`, `${cat2Race}`);
+const cat3 = renderKitten(`${cat3Image}`, `${cat3Desc}`, `${cat3Name}`, `${cat3Race}`);
 
 catList.innerHTML = cat1 + cat2 + cat3;
 
 
-const input_search_desc = document.querySelector('.js_in_search_desc');
-input_search_desc.value = 'tranquilo';
-const descrSearchText = input_search_desc.value;
-const cardDesc = document.querySelector('.card');
+// const input_search_desc = document.querySelector('.js_in_search_desc');
+//  input_search_desc.value = 'tranquilo';
+// const descrSearchText = input_search_desc.value;
+// const cardDesc = document.querySelector('.card');
 
-if(cat1Desc.includes(descrSearchText)) {
-  cardDesc.classList.remove("collapsed");
-} else {
-  cardDesc.classList.add("collapsed");
-};
+// if(cat1Desc.includes(descrSearchText)) {
+//   cardDesc.classList.remove("collapsed");
+// } else {
+//   cardDesc.classList.add("collapsed");
+// };
 
   
- if(cat2Desc.includes(descrSearchText)) {
-  cardDesc.classList.remove("collapsed");
-} else {
-cardDesc.classList.add("collapsed");
-};
+//  if(cat2Desc.includes(descrSearchText)) {
+//   cardDesc.classList.remove("collapsed");
+// } else {
+// cardDesc.classList.add("collapsed");
+// };
   
-if(cat3Desc.includes(descrSearchText)) {
- cardDesc.classList.remove("collapsed");
-} else {
-cardDesc.classList.add("collapsed");
-};
+// if(cat3Desc.includes(descrSearchText)) {
+//  cardDesc.classList.remove("collapsed");
+// } else {
+// cardDesc.classList.add("collapsed");
+// };
+
+//Ejercicio 4.2
+const anadir = document.querySelector(`.js-button`);
+
+anadir.addEventListener('click', (event) => {
+  const inputDesc = document.querySelector('.js-input-desc');
+  const inputPhoto = document.querySelector('.js-input-photo');
+  const inputName = document.querySelector('.js-input-name');
+  const labelMesageError = document.querySelector('.js-label-error');
+
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+
+  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+    labelMesageError.innerHTML = "Debes rellenar todos los valores"
+  } 
+});
+
+//Ejercicio 4.3
+const busca = document.querySelector('.js-button-buscar');
+
+busca.addEventListener('click', (event) =>{
+  const raza = document.querySelector('.js-raza');
+  const labelMesageError2 = document.querySelector('.js-label-buscar');
+  const input_search_desc = document.querySelector('.js_in_search_desc');
+
+  const valueRaza =  raza.value;
+  const descrSearchText = input_search_desc.value;
+
+  if (descrSearchText === '' || valueRaza === ''){
+    labelMesageError2.innerHTML = "Debes rellenar todos los valores"
+  }
+});
+
+
+//Ejercicio 4.4 (Sin completar)
+const cancel = document.querySelector('.js-button-cancel');
+
+cancel.addEventListener('click', (event) => {
+  event.preventDefault();
+  const inputDesc = document.querySelector('.js-input-desc');
+  const inputPhoto = document.querySelector('.js-input-photo');
+  const inputName = document.querySelector('.js-input-name');
+
+  let valueDesc = inputDesc.value;
+  let valuePhoto = inputPhoto.value;
+  let valueName = inputName.value;
+
+  valueDesc = '';
+  valueName = '';
+  valuePhoto = '';
+
+  form.classList.add('collapsed');
+})
+
