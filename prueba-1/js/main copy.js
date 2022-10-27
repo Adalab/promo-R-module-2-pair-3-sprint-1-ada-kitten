@@ -27,8 +27,6 @@ const cat3Race = 'British Shorthair';
 // catList.innerHTML += `<li>${cat2Image} ${cat2Name}} ${cat2Desc} ${cat2Race}</li>`;
 // catList.innerHTML += `<li>${cat3Image} ${cat3Name}} ${cat3Desc} ${cat3Race}</li>`;
 
-
-
 // const cat1 = `<li class="card">
 // <article>
 //   <img
@@ -67,7 +65,7 @@ const cat3Race = 'British Shorthair';
 // </p>
 // </li>`;
 
-//Ejercicio 3.1
+// //Ejercicio 3.1
 
 // const input_search_desc = document.querySelector('.js_in_search_desc');
 //  input_search_desc.value = 'tranquilo';
@@ -127,9 +125,6 @@ function handleClickNewCatForm(ev) {
 
 formButton.addEventListener("click", handleClickNewCatForm);
 //Fin Ejercicio 3.2 + 4.1 + 5.1
-
-//Ejercicio 3.3: Por hacer, BONUS
-
 
 //Ejercicio 4.2
 const anadir = document.querySelector(`.js-button`);
@@ -210,17 +205,13 @@ const cat3 = renderKitten(`${cat3Image}`, `${cat3Desc}`, `${cat3Name}`, `${cat3R
 catList.innerHTML = cat1 + cat2 + cat3;
 //Fin Ejercicio 5.2
 
-//Ejercicio 5.3
-//Fin Ejercicio 5.3
-
-//Ejercicio 6.1
-//Fin Ejercicio 6.1
-
 //Ejercicio 6.2
-//Fin Ejercicio 6.2
+//Fin Ejercicio 6.2 (POR TERMINAR)
 
 //Ejercicio 6.3
 //Fin Ejercicio 6.3
 
 //Ejercicio 6.4 (BONUS)
 //Fin Ejercicio 6.4 (BONUS)
+
+//Ejercicio 3.3: Por hacer, BONUS

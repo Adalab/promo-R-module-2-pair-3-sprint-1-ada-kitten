@@ -1,11 +1,12 @@
 "use strict";
 
+// Ejercicio 7.1
 const catList =  document.querySelector(".js-list");
 
- const cat1Data = {
+const cat1Data = {
     image: 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg',
     name: 'Anastacio'.toUpperCase(),
-    desc: 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!',
+    desc: 'Ruiseño, juguetón, le guta estar tumbado y que nadie le moleste. Es una maravilla acariciarle!',
     race: 'British Shorthair',
   };
 const cat2Data = {
@@ -40,9 +41,18 @@ function renderKitten(catData) {
   catList.innerHTML += result;
 }
 
-renderKitten(cat1Data);
-renderKitten(cat2Data);
-renderKitten(cat3Data);
+// renderKitten(cat1Data);
+// renderKitten(cat2Data);
+// renderKitten(cat3Data);
+
+// Ejercicio 8.1
+const catDataList = [
+  cat1Data,
+  cat2Data,
+  cat3Data,
+];
+
+// console.log(catDataList[2]);
 
 //Ejercicio 5.1
 const form = document.querySelector('.new-form');
@@ -65,27 +75,10 @@ function handleClickNewCatForm(ev) {
 
  formButton.addEventListener("click", handleClickNewCatForm);
 
-//Ejercicio 4.2
-const anadir = document.querySelector(`.js-button`);
-const inputDesc = document.querySelector('.js-input-desc');
-const inputPhoto = document.querySelector('.js-input-photo');
-const inputName = document.querySelector('.js-input-name');
-const labelMesageError = document.querySelector('.js-label-error');
-
-anadir.addEventListener('click', (event) => {
-  const valueDesc = inputDesc.value;
-  const valuePhoto = inputPhoto.value;
-  const valueName = inputName.value;
-
-  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
-    labelMesageError.innerHTML = "Debes rellenar todos los valores"
-  } 
-});
-
-//Ejercicio 4.4 
+//Ejercicio 4.4 + 6.1
 const cancel = document.querySelector('.js-button-cancel');
 
-cancel.addEventListener('click', (event) => {
+const cancelNewCat = (event) => {
   event.preventDefault();
   const inputDesc = document.querySelector('.js-input-desc');
   const inputPhoto = document.querySelector('.js-input-photo');
@@ -96,5 +89,59 @@ cancel.addEventListener('click', (event) => {
   inputName.value = '';
 
   form.classList.add('collapsed');
-})
+};
 
+cancel.addEventListener('click', cancelNewCat);
+
+// Ejercicio 6.2 
+
+const buttonSearch = document.querySelector('.js-button-buscar');
+const input_search_desc = document.querySelector('.js_in_search_desc');
+const descrSearchText = input_search_desc.value;
+
+const filterKitten = (event) => {
+  event.preventDefault();
+  if (cat1Data.desc.includes(descrSearchText)) {
+    catList.innerHTML += cat1Data;
+  }
+  if (cat2Data.desc.includes(descrSearchText)) {
+    catList.innerHTML += cat2Data;
+  }
+  if (cat3Data.desc.includes(descrSearchText)) {
+    catList.innerHTML += cat3Data;
+  }
+
+  console.log(cat1Data);
+  console.log(cat2Data);
+  console.log(cat3Data);
+};
+
+
+buttonSearch.addEventListener('click', filterKitten);
+
+// Ejercicio 5.3 + 4.2
+
+const anadir = document.querySelector(`.js-button`);
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const labelMesageError = document.querySelector('.js-label-error');
+
+
+anadir.addEventListener('click', addNewCat);
+
+function addNewCat(event) {
+  event.preventDefault();
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+
+  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+    labelMesageError.innerHTML = "Debes rellenar todos los valores"
+  } 
+  else {
+    labelMesageError.innerHTML = "Su gatito ha sido guardado"
+  }
+}
+
+// Ejercicio 6.1
