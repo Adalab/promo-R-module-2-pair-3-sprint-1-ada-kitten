@@ -90,31 +90,7 @@ const cancelNewCat = (event) => {
 
 cancel.addEventListener('click', cancelNewCat);
 
-// Ejercicio 6.2 
 
-const buttonSearch = document.querySelector('.js-button-buscar');
-const input_search_desc = document.querySelector('.js_in_search_desc');
-const descrSearchText = input_search_desc.value;
-
-const filterKitten = (event) => {
-  event.preventDefault();
-  if (cat1Data.desc.includes(descrSearchText)) {
-    catList.innerHTML += cat1Data;
-  }
-  if (cat2Data.desc.includes(descrSearchText)) {
-    catList.innerHTML += cat2Data;
-  }
-  if (cat3Data.desc.includes(descrSearchText)) {
-    catList.innerHTML += cat3Data;
-  }
-
-  console.log(cat1Data);
-  console.log(cat2Data);
-  console.log(cat3Data);
-};
-
-
-buttonSearch.addEventListener('click', filterKitten);
 
 // Ejercicio 5.3 + 4.2
 
@@ -150,5 +126,28 @@ let result = "";
    result += renderKitten(catItem);
   }
   catList.innerHTML = result;
+  console.log(result);
 }
-console.log(result);
+
+renderCatList(catDataList);
+
+//Ejercicio 9.2
+const buttonSearch = document.querySelector('.js-button-buscar');
+const input_search_desc = document.querySelector('.js_in_search_desc');
+
+function filterKitten(event) {
+  event.preventDefault();
+  const descrSearchText = input_search_desc.value;
+  catList.innerHTML = '';
+  for (const catItem of catDataList) {
+
+    if (catItem.desc.includes(descrSearchText)) {
+    catList.innerHTML += renderKitten(catItem);
+  }
+  }
+
+
+}
+
+buttonSearch.addEventListener('click', filterKitten);
+
