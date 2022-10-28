@@ -205,6 +205,30 @@ const cat3 = renderKitten(`${cat3Image}`, `${cat3Desc}`, `${cat3Name}`, `${cat3R
 catList.innerHTML = cat1 + cat2 + cat3;
 //Fin Ejercicio 5.2
 
+// Ejercicio 7.1
+const catList =  document.querySelector(".js-list");
+
+const cat1Data = {
+    image: 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg',
+    name: 'Anastacio'.toUpperCase(),
+    desc: 'Ruiseño, juguetón, le guta estar tumbado y que nadie le moleste. Es una maravilla acariciarle!',
+    race: 'British Shorthair',
+  };
+const cat2Data = {
+  image: 'https://images.emedicinehealth.com/images/article/main_image/cat-scratch-disease.jpg',
+  name: 'Fiona'.toUpperCase(),
+  desc: 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!',
+  race: 'British Shorthair',
+};
+
+const cat3Data = {
+  image: 'https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_39/3021711/190923-cat-pet-stock-cs-1052a.jpg',
+  name: 'Cielo'.toUpperCase(),
+  desc: 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!',
+  race: 'British Shorthair',
+};
+
+
 //Ejercicio 6.2
 //Fin Ejercicio 6.2 (POR TERMINAR)
 
